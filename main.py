@@ -1,6 +1,6 @@
 import socket   
 import os
-from models import Disk, Network, Ordinateur
+from models import Disk, Network, Ordinateur, Software
 
 from name_computer import get_name_computer
 from network_computer import get_network_computer
@@ -24,3 +24,5 @@ monReseau1 = Network(monOrdinateur1)
 monReseau1.print_info()
 monDisk = Disk(monOrdinateur1)
 monDisk.print_info()
+monSoftware = Software()
+monSoftware.print_info()

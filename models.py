@@ -1,7 +1,7 @@
-from ipaddress import ip_address
 import os
 import socket
 import shutil
+import subprocess
 
 
 
@@ -34,7 +34,13 @@ class Disk():
     def print_info(self):
         print("L'utilisation est : {}".format(self.space))
 
-
-
-    
-    
+class Software():
+    name = None
+    software = None
+    a = None
+    def __init__(self) -> None:
+        self.software = subprocess.check_output(['wmic', 'product', 'get', 'name'])
+        self.a = str(self.software)
+    def print_info(self):
+        for element in self.a.split("\\r\\r\\n")[6:]: 
+            print(element)
