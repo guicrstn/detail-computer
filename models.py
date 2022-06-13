@@ -32,13 +32,15 @@ class Disk():
         path = "C:"
         self.space = shutil.disk_usage(path) 
     def print_info(self):
-        print("L'utilisation est : {}".format(self.space))
+        print("ESPACE DISQUE \n {}".format(self.space))
 
 class Software():
     name = None
     software = None
     a = None
     def __init__(self) -> None:
+        print("APPLICATION INSTALLEES \n " )   
+
         self.software = subprocess.check_output(['wmic', 'product', 'get', 'name'])
         self.a = str(self.software)
     def print_info(self):

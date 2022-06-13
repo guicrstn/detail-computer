@@ -1,0 +1,53 @@
+Le nom de l'ordinateur est : PORT-GUILLAUME 
+L'utilisateur est: g.cristini
+L'IP: 172.24.32.158 
+ESPACE DISQUE 
+ usage(total=127375437824, used=107496771584, free=19878666240)
+APPLICATION INSTALLEES 
+ 
+Python 3.10.4 pip Bootstrap (64-bit)                                
+Python 3.10.4 Core Interpreter (64-bit)                             
+Python 3.10.4 Tcl/Tk Support (64-bit)                               
+Python 3.10.4 Documentation (64-bit)                                
+3CX Desktop App                                                     
+Python 3.10.4 Standard Library (64-bit)                             
+Microsoft Office Access database engine 2007 (English)              
+Office 16 Click-to-Run Extensibility Component                      
+Office 16 Click-to-Run Localization Component                       
+Office 16 Click-to-Run Extensibility Component 64-bit Registration  
+Office 16 Click-to-Run Licensing Component                          
+DYMO Connect                                                        
+VMware Workstation                                                  
+Python Launcher                                                     
+Microsoft Visual C++ 2010  x86 Redistributable - 10.0.40219         
+Microsoft Visual C++ 2013 x86 Minimum Runtime - 12.0.21005          
+Microsoft Visual C++ 2013 x86 Additional Runtime - 12.0.21005       
+Microsoft Visual C++ 2019 X64 Minimum Runtime - 14.29.30139         
+Microsoft Update Health Tools                                       
+Microsoft Visual C++ 2019 X64 Additional Runtime - 14.29.30139      
+Bonjour                                                             
+Intel(R) ME UninstallLegacy                                         
+HDD Regenerator                                                     
+Intel(R) Management Engine Components                               
+Oracle VM VirtualBox 6.1.28                                         
+Microsoft Visual C++ 2013 x64 Additional Runtime - 12.0.21005       
+paint.net                                                           
+Microsoft Visual C++ 2013 x64 Minimum Runtime - 12.0.21005          
+Macrium Reflect Free Edition                                        
+Microsoft Visual C++ 2019 X86 Additional Runtime - 14.24.28127      
+FUJITSU Battery Charging Control Update Tool                        
+Google Update Helper                                                
+3CX Plugins                                                         
+                                                                    
+Google Update Helper                                                
+                                                                    
+Agent d'administration de Kaspersky Security Center                 
+Remote Desktop Manager                                              
+Microsoft Visual C++ 2010  x64 Redistributable - 10.0.30319         
+Update for Windows 10 for x64-based Systems (KB5001716)             
+                                                                    
+3CXPhone for Windows                                                
+Microsoft Visual C++ 2019 X86 Minimum Runtime - 14.24.28127         
+Kaspersky Endpoint Security for Windows                             
+
+"
