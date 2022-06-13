@@ -1,6 +1,6 @@
-Le nom de l'ordinateur est : PORT-GUILLAUME 
-L'utilisateur est: g.cristini
-L'IP: 172.24.32.158 
+PORT-GUILLAUME 
+L'utilisateur est: 
+L'IP: 
 ESPACE DISQUE 
  usage(total=127375437824, used=107496771584, free=19878666240)
 APPLICATION INSTALLEES 
