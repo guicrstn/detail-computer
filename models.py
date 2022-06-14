@@ -2,6 +2,31 @@ import os
 import socket
 import shutil
 import subprocess
+import platform
+
+class Prompt():
+   
+    def __init__(self) -> None:
+        self.value = "SYSTEME D'EXPLOITATION <<<"   
+        self.print_info()
+
+    def set_value(self, value):
+        self.value = value
+        self.print_info()    
+
+    def print_info(self):
+        print('>>> {}'.format(self.value))
+
+
+class interfaces():
+    pass
+
+
+
+
+
+
+
 
 
 
@@ -13,6 +38,7 @@ class Ordinateur():
     def __init__(self) :
         self.name = socket.gethostname()
         self.user = os.getlogin()
+        
 
 class Network():
     '''
@@ -34,8 +60,7 @@ class Disk():
     
     Description : Classe qui comprend: taille du disque utilisé, taille de la place restante, taille total
     '''
-    def __init__(self, ordinateur : Ordinateur):
-        pass        
+    def __init__(self, ordinateur : Ordinateur):        
         self.ordinateur = ordinateur
         self.path = "C:"
         self.space = shutil.disk_usage(self.path) 
@@ -58,3 +83,5 @@ class Software():
         print("APPLICATION INSTALLEES \n " ) 
         for element in self.a.split("\\r\\r\\n")[6:]: 
             print(element)
+
+
