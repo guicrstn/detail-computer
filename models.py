@@ -15,16 +15,22 @@ class Prompt():
     '''
 
     def __init__(self) -> None:
-        self.value = "SYSTEME D'EXPLOITATION <<<"   
-        self.print_info()
+        self.resultats = [] 
+        self.set_value("SYSTEME D'EXPLOITATION <<<" )  
+       
 
     def set_value(self, value):
         self.value = value
+        self.resultats.append(self.value)
         self.print_info()    
 
     def print_info(self):
         print('>>> {}'.format(self.value))
 
+    def save_to_txt(self, name = "resultats" ):
+        with open('{}.txt'.format(name), 'a') as file: 
+            for value in self.resultats:
+                file.write('{}\n'.format(value))
 
 class Interfaces():
     
@@ -49,7 +55,7 @@ class Interfaces():
     '''
 
     def __init__(self) -> None:
-        self.value = " Interface <<<"  
+        self.value = "Interface <<<"  
         self.addrs = netifaces.ifaddresses('ens33')
     def get_IPV4(self):
         return self.addrs[netifaces.AF_INET][0]['addr']
@@ -59,6 +65,7 @@ class Interfaces():
         return self.addrs[netifaces.AF_INET][0]['broadcast']
     def get_macadress(self):
         return self.addrs[netifaces.AF_LINK][0]['addr']
+        
 
 
 class Computer():
@@ -78,7 +85,7 @@ class Computer():
     '''
     def __init__(self) -> None:
 
-        self.value = " Information disque <<<"
+        self.value = "Information disque <<<"
         self.total, self.used, self.free = shutil.disk_usage("/")
     
     def get_totaldisk(self):
@@ -90,45 +97,6 @@ class Computer():
     def get_freedisk(self):
         return self.free // (2**30)
           
-
-
-
-class Ordinateur():
-    '''
-    Class : Ordinateur 
-    Description : Classe qui comprend le nom du poste et l'utilisateur.
-    '''
-    def __init__(self) :
-        self.name = socket.gethostname()
-        self.user = os.getlogin()
-        
-
-class Network():
-    '''
-    Class : Network 
-
-    Description : Classe qui comprend: Nom de domaine, adresse IP, masque de sous réseaux, passerelle, dns
-    '''
-    def __init__(self, ordinateur : Ordinateur):
-        self.ordinateur = ordinateur
-        self.ip_adress = socket.gethostbyname(self.ordinateur.name)
-
-    def print_info(self):
-        print( "Le nom de l'ordinateur est : {} \nL'utilisateur est: {}".format(self.ordinateur.name, self.ordinateur.user))
-        print( "L'IP: {} ".format(self.ip_adress))
-
-class Disk():
-    '''
-    Class : Disk 
-    
-    Description : Classe qui comprend: taille du disque utilisé, taille de la place restante, taille total
-    '''
-    def __init__(self, ordinateur : Ordinateur):        
-        self.ordinateur = ordinateur
-        self.path = "/"
-        self.space = shutil.disk_usage(self.path) 
-    def print_info(self):
-        print("ESPACE DISQUE \n {}".format(self.space))
 
 class Software():
     
