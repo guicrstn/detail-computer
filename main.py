@@ -1,20 +1,7 @@
 
-from models import Disk, Interfaces, Network, Ordinateur, Software, Prompt
+from models import Computer, Disk, Interfaces, Network, Ordinateur, Software, Prompt
 import platform
 import sysconfig
-
-''' Result of script '''   
-
-def print_result(type,val):
-    print("{} {}".format(type,val))   
-
-
-
-# (domain_name, ip_address, mask, gateway, dns) = get_network_computer
-
-#print_result('Nom du PC :\n', name)
-#print_result('Nom utilisateur :\n',hostname)
-#print_result('ip:\n', get_network_computer(name))
 
 prompt = Prompt()
 
@@ -27,11 +14,12 @@ interfaces = Interfaces()
 prompt.set_value("Adresse IP ....................... {}".format(interfaces.get_IPV4()))
 prompt.set_value("Masque de sous réseaux............ {}".format(interfaces.get_subnetmask()))
 prompt.set_value("Passerelle par défault............ {}".format(interfaces.get_defaultgateway()))
+prompt.set_value("Adresse MAC....................... {}".format(interfaces.get_macadress()))
 
-monOrdinateur1 = Ordinateur()
-monReseau1 = Network(monOrdinateur1)
-monReseau1.print_info()
-monDisk = Disk(monOrdinateur1)
-monDisk.print_info()
-monSoftware = Software()
-monSoftware.print_info()
+computer = Computer()
+
+prompt.set_value("Taille total...................... {} GiB".format(computer.get_totaldisk()))
+prompt.set_value("Taille utilisé...................... {} GiB".format(computer.get_useddisk()))
+prompt.set_value("Taille disponible...................... {} GiB".format(computer.get_freedisk()))
+
+

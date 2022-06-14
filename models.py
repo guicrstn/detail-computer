@@ -4,6 +4,7 @@ import shutil
 import subprocess
 import platform
 import netifaces
+import shutil
 
 class Prompt():
 
@@ -43,6 +44,8 @@ class Interfaces():
 
     - Passerelle par défault
 
+    - Adresse MAC
+
     '''
 
     def __init__(self) -> None:
@@ -54,13 +57,39 @@ class Interfaces():
         return self.addrs[netifaces.AF_INET][0]['netmask']
     def get_defaultgateway(self):
         return self.addrs[netifaces.AF_INET][0]['broadcast']
+    def get_macadress(self):
+        return self.addrs[netifaces.AF_LINK][0]['addr']
 
 
+class Computer():
 
 
+    '''
+    Class : Computer
 
+    Description : Classe qui contient les informations du disque dur.
 
+    - Taille total  
+                                                                        
+    - Taille utilisé 
 
+    - Taille restante
+
+    '''
+    def __init__(self) -> None:
+
+        self.value = " Information disque <<<"
+        self.total, self.used, self.free = shutil.disk_usage("/")
+    
+    def get_totaldisk(self):
+        return self.total // (2**30)
+    
+    def get_useddisk(self):
+        return self.used // (2**30)
+    
+    def get_freedisk(self):
+        return self.free // (2**30)
+          
 
 
 
@@ -96,7 +125,7 @@ class Disk():
     '''
     def __init__(self, ordinateur : Ordinateur):        
         self.ordinateur = ordinateur
-        self.path = "C:"
+        self.path = "/"
         self.space = shutil.disk_usage(self.path) 
     def print_info(self):
         print("ESPACE DISQUE \n {}".format(self.space))

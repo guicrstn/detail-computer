@@ -1,5 +1,7 @@
-import netifaces
+import shutil
 
+total, used, free = shutil.disk_usage("/")
 
-addrs = (netifaces.ifaddresses('ens33'))
-print(addrs[netifaces.AF_INET][0]['addr'])
+print("Total: %d GiB" % (total // (2**30)))
+print("Utilisé: %d GiB" % (used // (2**30)))
+print("Disponible: %d GiB" % (free // (2**30)))
