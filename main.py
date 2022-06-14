@@ -1,5 +1,5 @@
 
-from models import Disk, Network, Ordinateur, Software, Prompt
+from models import Disk, Interfaces, Network, Ordinateur, Software, Prompt
 import platform
 import sysconfig
 
@@ -22,7 +22,11 @@ prompt.set_value("Système d'exploitation............ {}".format(platform.system
 prompt.set_value("Version du sytème d'exploitation.. {}".format(sysconfig.get_platform()))
 prompt.set_value("Taille des bits du système........ {}".format(platform.machine()))
 
+interfaces = Interfaces()
 
+prompt.set_value("Adresse IP ....................... {}".format(interfaces.get_IPV4()))
+prompt.set_value("Masque de sous réseaux............ {}".format(interfaces.get_subnetmask()))
+prompt.set_value("Passerelle par défault............ {}".format(interfaces.get_defaultgateway()))
 
 monOrdinateur1 = Ordinateur()
 monReseau1 = Network(monOrdinateur1)

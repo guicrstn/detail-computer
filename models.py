@@ -3,9 +3,16 @@ import socket
 import shutil
 import subprocess
 import platform
+import netifaces
 
 class Prompt():
-   
+
+    '''
+    Class : Prompt 
+    Description : Classe qui permet d'afficher des informations.
+
+    '''
+
     def __init__(self) -> None:
         self.value = "SYSTEME D'EXPLOITATION <<<"   
         self.print_info()
@@ -18,8 +25,35 @@ class Prompt():
         print('>>> {}'.format(self.value))
 
 
-class interfaces():
-    pass
+class Interfaces():
+    
+    '''
+    Class : Interfaces 
+
+    Description : Classe qui contient les informations de l'interface: 
+    - Système d'exploitation
+
+    - Version du système d'exploitation
+                                                                        
+    - Tailles des bits du système 
+
+    - Adresse IP
+
+    - Masque de sous réseaux
+
+    - Passerelle par défault
+
+    '''
+
+    def __init__(self) -> None:
+        self.value = " Interface <<<"  
+        self.addrs = netifaces.ifaddresses('ens33')
+    def get_IPV4(self):
+        return self.addrs[netifaces.AF_INET][0]['addr']
+    def get_subnetmask(self):
+        return self.addrs[netifaces.AF_INET][0]['netmask']
+    def get_defaultgateway(self):
+        return self.addrs[netifaces.AF_INET][0]['broadcast']
 
 
 
