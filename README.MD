@@ -38,7 +38,7 @@ Interface <<<
 
 Information disque <<<
 - Taille total...................... 1 GiB
-- Taille utilisé...................... 1 GiB
-- Taille disponible...................... 0 GiB
+- Taille utilisé.................... 1 GiB
+- Taille disponible................. 0 GiB
 
 
