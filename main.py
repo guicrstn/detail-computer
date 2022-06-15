@@ -4,6 +4,7 @@ import platform
 import sysconfig
 import subprocess
 
+
 prompt = Prompt()
 
 prompt.set_value("Système d'exploitation............ {}".format(platform.system()))

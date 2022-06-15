@@ -58,12 +58,24 @@ class Interfaces():
         self.value = "Interface <<<"  
         self.addrs = netifaces.ifaddresses('ens33')
     def get_IPV4(self):
+        '''
+        Fonction :  récupere l'adresse IPV4.
+        '''
         return self.addrs[netifaces.AF_INET][0]['addr']
     def get_subnetmask(self):
+        '''
+        Fonction :  récupere le masque de sous réseaux.
+        '''
         return self.addrs[netifaces.AF_INET][0]['netmask']
     def get_defaultgateway(self):
+        '''
+        Fonction :  récupere la passerelle par défault.
+        '''
         return self.addrs[netifaces.AF_INET][0]['broadcast']
     def get_macadress(self):
+        '''
+        Fonction :  récupere la MAC adresse.
+        '''
         return self.addrs[netifaces.AF_LINK][0]['addr']
         
 
@@ -98,21 +110,6 @@ class Computer():
         return self.free // (2**30)
           
 
-class Software():
-    
-    def __init__(self) -> None:
 
-        '''
-        Class : Disk 
-        
-        Description : Classe qui comprend: taille du disque utilisé, taille de la place restante, taille total
-        '''
-    
-        self.software = subprocess.check_output(['wmic', 'product', 'get', 'name'])
-        self.a = str(self.software)
-    def print_info(self):
-        print("APPLICATION INSTALLEES \n " ) 
-        for element in self.a.split("\\r\\r\\n")[6:]: 
-            print(element)
 
 
